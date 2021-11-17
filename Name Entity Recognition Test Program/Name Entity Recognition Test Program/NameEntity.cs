@@ -11,12 +11,21 @@ namespace Name_Entity_Recognition_Test_Program
         public string Name { get; set; }
 
         [LoadColumn(1)]
-        public string Entity { get; set; }
+        public string Category { get; set; }
+
+        [LoadColumn(2)]
+        public string Grammar { get; set; }
     }
 
-    public class Prediction
+    public class Prediction_Category
     {
         [ColumnName("PredictedLabel")]
-        public string Entity;
+        public string Category;
+    }
+
+    public class Prediction_Grammar
+    {
+        [ColumnName("PredictedLabel")]
+        public string Grammar;
     }
 }

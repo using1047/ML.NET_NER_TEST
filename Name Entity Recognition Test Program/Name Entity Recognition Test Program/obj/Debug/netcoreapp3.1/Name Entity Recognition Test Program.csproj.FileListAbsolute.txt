@@ -1,5 +1,3 @@
-D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.csv
-D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.txt
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.exe
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.deps.json
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.runtimeconfig.json

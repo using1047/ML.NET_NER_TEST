@@ -1,16 +1,83 @@
-Name	Entity
-January	Date
-February	Date
-March	Date
-April	Date
-May	Date
-June	Date
-July	Date
-August	Date
-September	Date
-October	Date
-November	Date
-December	Date
-Fish	Animal
-Rat	Animal
-Rabbit	Animal
+Name	Category	Grammar
+1	Number	INT
+2	Number	INT
+3	Number	INT
+100	Number	INT
+1000	Number	INT
+-5	Number	INT
+1.23	Number	FLOOT
+100.78	Number	FLOOT
+20.00	Number	FLOOT
+-0.1	Number	FLOOT
+-5.0	Number	FLOOT
+0	Number	INT
+He	None	Noun
+His	None	Noun
+Him	None	Noun
+She	None	Noun
+Her	None	Noun
+January	Date	None
+February	Date	None
+March	Date	None
+April	Date	None
+May	Date	None
+June	Date	None
+July	Date	None
+August	Date	None
+September	Date	None
+October	Date	None
+November	Date	None
+December	Date	None
+Day	Date	Noun
+Days	Date	Nouns
+One	Number	None
+Two	Number	None
+Three	Number	None
+Four	Number	None
+Five	Number	None
+Six	Number	None
+Seven	Number	None
+Eight	Number	None
+Nine	Number	None
+Ten	Number	None
+People	Animal	Nouns
+Fish	Animal	Noun
+Rat	Animal	Noun
+Rats	Animal	Nouns
+Rabbit	Animal	Noun
+Mouse	Animal	Noun
+Mice	Animal	Nouns
+Cat	Animal	Noun
+Hamster	Animal	Noun
+GuineaPig	Animal	Noun
+Horse	Animal	Noun
+Monkey	Animal	Noun
+Dog	Animal	Noun
+Dogs	Animal	Nouns
+Skin	Body	Noun
+Eye	Body	Noun
+Eyes	Body	Nouns
+Foot	Body	Noun
+Hand	Body	Noun
+Oral	Body	Noun
+Carbon	Chemical	None
+Little	None	Adjective
+Many	None	Adjective
+Respiratory	Body	Adjective
+Dermal	Body	Adjective
+Formaldehyde	Chemical	Noun
+React	None	Verb
+Cysteine	Chemical	Noun
+Product	None	Noun
+Products	None	Nouns
+Derivative	None	Noun
+Metabolite	Chemical	None
+After	None	None
+Via	None	None
+Which	None	None
+Formate	None	Verb
+Urinary	Body	Adjective
+Urinal	None	Noun
+Identify	None	Verb
+Identified	None	Verb
+from	None	Preposition
