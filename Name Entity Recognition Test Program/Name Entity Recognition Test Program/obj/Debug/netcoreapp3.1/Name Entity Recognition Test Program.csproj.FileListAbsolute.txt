@@ -1,0 +1,36 @@
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.csv
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.txt
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.exe
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.deps.json
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.runtimeconfig.json
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.runtimeconfig.dev.json
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Name Entity Recognition Test Program.pdb
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.Core.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.Data.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.KMeansClustering.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.PCA.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.StandardTrainers.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.Transforms.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.CpuMath.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Microsoft.ML.DataView.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libLdaNative.so
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libLdaNative.so
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libLdaNative.so
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\osx-arm64\native\libLdaNative.dylib
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libLdaNative.dylib
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\LdaNative.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\LdaNative.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.csprojAssemblyReference.cache
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.AssemblyInfoInputs.cache
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.AssemblyInfo.cs
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.csproj.CoreCompileInputs.cache
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.csproj.CopyComplete
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.dll
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.pdb
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.genruntimeconfig.cache
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.tsv

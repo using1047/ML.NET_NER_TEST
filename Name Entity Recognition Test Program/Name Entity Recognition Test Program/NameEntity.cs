@@ -16,7 +16,7 @@ namespace Name_Entity_Recognition_Test_Program
 
     public class Prediction
     {
-        [ColumnName("PredictedEntity")]
+        [ColumnName("PredictedLabel")]
         public string Entity;
     }
 }
