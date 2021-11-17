@@ -44,7 +44,8 @@ namespace Name_Entity_Recognition_Test_Program
         private static string[] StopWord = { "be", "is", "are", "was", "were", "have", "has", "will",
                                                                 "the", "as", "an", "a", "at", "of", "to", "in", "for", "'s",
                                                                 "with", "both", "and", "or",
-                                                                "it", "its"};
+                                                                "it", "its", "by", "under", "on",
+                                                                "here", "there", "this", "that"};
 
         /// <summary>
         /// 불용어 리스트
@@ -73,7 +74,7 @@ namespace Name_Entity_Recognition_Test_Program
 
             G_predEngine = _mlContext.Model.CreatePredictionEngine<InputData, Prediction_Grammar>(G_trainedModel);
 
-            string Data = "Exposure to formaldehyde, a known air toxic, is associated with cancer and lung disease. Despite the adverse health effects of formaldehyde, the mechanisms underlying formaldehyde-induced disease remain largely unknown. Research has uncovered microRNAs (miRNAs) as key posttranscriptional regulators of gene expression that may influence cellular disease state. Although studies have compared different miRNA expression patterns between diseased and healthy tissue, this is the first study to examine perturbations in global miRNA levels resulting from formaldehyde exposure. We investigated whether cellular miRNA expression profiles are modified by formaldehyde exposure to test the hypothesis that formaldehyde exposure disrupts miRNA expression levels within lung cells, representing a novel epigenetic mechanism through which formaldehyde may induce disease. Human lung epithelial cells were grown at air-liquid interface and exposed to gaseous formaldehyde at 1 ppm for 4 hr. Small RNAs and protein were collected and analyzed for miRNA expression using microarray analysis and for interleukin (IL-8) protein levels by enzyme-linked immunosorbent assay (ELISA). RESULTS: Gaseous formaldehyde exposure altered the miRNA expression profiles in human lung cells. Specifically, 89 miRNAs were significantly down-regulated in formaldehyde-exposed samples versus controls. Functional and molecular network analysis of the predicted miRNA transcript targets revealed that formaldehyde exposure potentially alters signaling pathways associated with cancer, inflammatory response, and endocrine system regulation. IL-8 release increased in cells exposed to formaldehyde, and results were confirmed by real-time polymerase chain reaction. Formaldehyde alters miRNA patterns that regulate gene expression, potentially leading to the initiation of a variety of diseases.";
+            string Data = "Aldehydes are readily oxidized to organic acids, which, in turn, can serve as substrates for fatty acid oxidation pathways and the Krebs cycle. ... Oxidation of aldehydes is catalyzed by aldehyde dehydrogenase, which has been found in the brain, erythrocytes, liver, kidney, heart, and placenta. /Aldehydes/";
 
             Data = Remove_StopWord(Data);
             InputData[] datas = Tokenize(Data);
@@ -83,7 +84,7 @@ namespace Name_Entity_Recognition_Test_Program
                 var predictionC = C_predEngine.Predict(data);
                 var predictionG = G_predEngine.Predict(data);
 
-                Console.WriteLine($"데이터 : {data.Name, -30} | 카테고리 : {predictionC.Category, -20} | 문법 : {predictionG.Grammar, -10}");
+                Console.WriteLine($"단어 : {data.Name, -30} | 카테고리 : {predictionC.Category, -20} | 문법 : {predictionG.Grammar, -10}");
             }
         }
 
