@@ -74,7 +74,7 @@ namespace Name_Entity_Recognition_Test_Program
 
             G_predEngine = _mlContext.Model.CreatePredictionEngine<InputData, Prediction_Grammar>(G_trainedModel);
 
-            string Data = "Aldehydes are readily oxidized to organic acids, which, in turn, can serve as substrates for fatty acid oxidation pathways and the Krebs cycle. ... Oxidation of aldehydes is catalyzed by aldehyde dehydrogenase, which has been found in the brain, erythrocytes, liver, kidney, heart, and placenta. /Aldehydes/";
+            string Data = "PRECAUTIONS FOR CARCINOGENS: ... Operations connected with synth & purification ... should be carried out under well-ventilated hood. Analytical procedures ... should be carried out with care & vapors evolved during ... procedures should be removed. ... Expert advice should be obtained before existing fume cupboards are used ... & when new fume cupboards are installed. It is desirable that there be means for decreasing the rate of air extraction, so that carcinogenic powders can be handled without ... powder being blown around the hood. Glove boxes should be kept under negative air pressure. Air changes should be adequate, so that concn of vapors of volatile carcinogens will not occur. /Chemical Carcinogens/";
 
             Data = Remove_StopWord(Data);
             InputData[] datas = Tokenize(Data);
