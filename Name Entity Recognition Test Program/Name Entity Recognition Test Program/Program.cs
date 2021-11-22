@@ -23,14 +23,11 @@ namespace Name_Entity_Recognition_Test_Program
         /// </summary>
         private static PredictionEngine<InputData, Prediction_Grammar> G_predEngine;
 
-        private static PredictionEngine<TextData, Prediction_Subejct> S_predEngine;
-
         /// <summary>
         /// 학습 관련 변수들
         /// </summary>
         private static ITransformer C_trainedModel;
         private static ITransformer G_trainedModel;
-        private static ITransformer S_trainedModel;
         static IDataView _trainingDataView;
 
         /// <summary>
@@ -59,7 +56,7 @@ namespace Name_Entity_Recognition_Test_Program
 
         static void Main(string[] args)
         {
-            Test_Subject();
+            Test_Grammar();
         }
 
         static void Test_Grammar()
@@ -97,29 +94,6 @@ namespace Name_Entity_Recognition_Test_Program
             }
         }
 
-        static void Test_Subject()
-        {
-            // 시드는 변경 가능
-            _mlContext = new MLContext(seed: 0);
-
-            Subject_ReadFile();
-
-            var subejct_pipeline = Subject_ProcessData();
-            var StrainingPipeline = SBuildAndTrainModel(_trainingDataView, subejct_pipeline);
-            S_trainedModel = StrainingPipeline.Fit(_trainingDataView);
-
-            S_predEngine = _mlContext.Model.CreatePredictionEngine<TextData, Prediction_Subejct>(S_trainedModel);
-
-            TextData td = new TextData
-            {
-                Text = "Acute Exposure/ The sensory irritating potential of a series of saturated and unsaturated aliphatic and cyclic aldehydes was investigated in B6C3F1 and Swiss Webster mice."
-            };
-
-            var result = S_predEngine.Predict(td);
-
-            Console.WriteLine( $"{result.Subject, -10}, {result.SubFeatures}");
-        }
-
         /// <summary>
         /// 지정한 파일을 읽어오기
         /// </summary>
@@ -128,17 +102,6 @@ namespace Name_Entity_Recognition_Test_Program
             if (!File.Exists(_trainDataPath)) throw new Exception("파일이 존재하지 않습니다..");
 
             try { _trainingDataView = _mlContext.Data.LoadFromTextFile<InputData>(_trainDataPath, hasHeader: true); }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-        }
-
-        /// <summary>
-        /// 지정한 파일을 읽어오기
-        /// </summary>
-        static void Subject_ReadFile()
-        {
-            if (!File.Exists(_trainDataPath)) throw new Exception("파일이 존재하지 않습니다..");
-
-            try { _trainingDataView = _mlContext.Data.LoadFromTextFile<TextData>(_trainSubjectDataPath, hasHeader: true); }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
 
@@ -196,30 +159,6 @@ namespace Name_Entity_Recognition_Test_Program
                 Console.WriteLine(e.ToString());
                 return null;
             }
-        }
-
-        static IEstimator<ITransformer> Subject_ProcessData()
-        {
-            var subjectModel = _mlContext.Transforms.Conversion.MapValueToKey(inputColumnName: "Subject", outputColumnName: "Label")
-               .Append(_mlContext.Transforms.Text.FeaturizeText(inputColumnName: "Text", outputColumnName: "TextFeaturized"))
-               .Append(_mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "ValidFeaturized", inputColumnName: nameof(TextData.Valid)))
-               // Features 에 데이터를 연결
-               .Append(_mlContext.Transforms.Concatenate("Features","TextFeaturized", "ValidFeaturized"))
-               
-               // DataView 캐쉬
-               .AppendCacheCheckpoint(_mlContext);
-
-            return subjectModel;
-        }
-
-        static IEstimator<ITransformer> SBuildAndTrainModel(IDataView trainingDataView, IEstimator<ITransformer> pipeline)
-        {
-            var Pipeline = pipeline.Append(_mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy("Label", "Features"))
-            .Append(_mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
-
-            var model = Pipeline.Fit(_trainingDataView);
-
-            return Pipeline;
         }
 
         /// <summary>
