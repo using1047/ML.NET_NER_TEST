@@ -23,11 +23,14 @@ namespace Name_Entity_Recognition_Test_Program
         /// </summary>
         private static PredictionEngine<InputData, Prediction_Grammar> G_predEngine;
 
+        private static PredictionEngine<TextData, Prediction_Subejct> S_predEngine;
+
         /// <summary>
         /// 학습 관련 변수들
         /// </summary>
         private static ITransformer C_trainedModel;
         private static ITransformer G_trainedModel;
+        private static ITransformer S_trainedModel;
         static IDataView _trainingDataView;
 
         /// <summary>
@@ -35,6 +38,7 @@ namespace Name_Entity_Recognition_Test_Program
         /// </summary>
         private static string _appPath => Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
         private static string _trainDataPath => Path.Combine(_appPath, "Data", "InputData.tsv");
+        private static string _trainSubjectDataPath => Path.Combine(_appPath, "Data", "TextData.tsv");
         private static string _testDataPath => Path.Combine(_appPath, "Data", "Test.csv");
         private static string _modelPath => Path.Combine(_appPath, "Models", "Model.zip");
 
@@ -55,10 +59,15 @@ namespace Name_Entity_Recognition_Test_Program
 
         static void Main(string[] args)
         {
+            Test_Subject();
+        }
+
+        static void Test_Grammar()
+        {
             // 시드는 변경 가능
             _mlContext = new MLContext(seed: 0);
 
-            ReadFile();
+            Grammar_ReadFile();
 
             // 카테고리 분류 모델
             var Category_pipeline = Category_ProcessData();
@@ -74,28 +83,62 @@ namespace Name_Entity_Recognition_Test_Program
 
             G_predEngine = _mlContext.Model.CreatePredictionEngine<InputData, Prediction_Grammar>(G_trainedModel);
 
-            string Data = "3,3'-Dimethoxybenzidine's production and use as a chemical intermediate in the production of azo dyes may result in its release to the environment through various waste streams(SRC). Although 3,3'-dimethoxybenzidine is apparently not produced in the United States any longer, it may still be imported into the country. If released to air, an estimated vapor pressure of 1.2X10-7 mm Hg at 25 °C indicates 3,3'-dimethoxybenzidine will exist in both the vapor and particulate phases in the ambient atmosphere. Vapor-phase 3,3'-dimethoxybenzidine will be degraded in the atmosphere by reaction with photochemically-produced hydroxyl radicals; the half-life for this reaction in air is estimated to be 3 hours. 3,3'-Dimethoxybenzidine absorbs light greater than 290 nm, and it may be susceptible to direct photolysis in the environment; however, the rate of this potential reaction is unknown. Particulate-phase 3,3'-dimethoxybenzidine will be removed from the atmosphere by wet and dry deposition. If released to soil, 3,3'-dimethoxybenzidine is expected to have moderate mobility based upon an estimated Koc of 230. The first pKa of 3,3'-dimethoxybenzidine is estimated as 4.2, which indicates that 3,3'-dimethoxybenzidine will partially exist in the protonated form under acidic conditions and cations have greater adsorption to soils than neutral molecules. Furthermore, 3,3'-dimethoxybenzidine is an aromatic amine which may form covalent bonds with humic materials resulting in relatively immobile quinone-like complexes. Volatilization from moist soil surfaces is not expected to be an important fate process for 3,3'-dimethoxybenzidine because cations do not volatilize, and the estimated Henry's Law constant of the neutral species is 4.7X10-11 atm-cu m/mole. 3,3'-Dimethoxybenzidine is not expected to volatilize from dry soil surfaces based upon its estimated vapor pressure. No data regarding the biodegradation of 3,3'-dimethoxybenzidine in soil or natural water were found. However, screening studies using sewage sludge inoculum suggest biodegradation will occur slowly in the environment. Benzidine and its derivatives such as 3,3'-dimethoxybenzidine are known to be to be rapidly oxidized by Fe(III) and other cations which are frequently found in soil and environmental waters. If released into water, 3,3'-dimethoxybenzidine is expected to adsorb to suspended solids and sediment based upon the estimated Koc. Volatilization from water surfaces is not expected to be an important fate process for either the free base or its conjugate acid based upon this compound's estimated Henry's Law constant and the fact that cations are non-volatile. An estimated BCF of 5 suggests the potential for bioconcentration in aquatic organisms is low. 3,3'-Dimethoxybenzidine is not expected to undergo hydrolysis due to a lack of hydrolyzable functional groups. Occupational exposure to 3,3'-dimethoxybenzidine may occur through inhalation and dermal contact with this compound at workplaces where 3,3'-dimethoxybenzidine is used. (SRC)";
+            string Data = "Subchronic or Prechronic Exposure/ Four-week-old male Hartley guinea pigs were exposed to the test substance (500 ppb) for 4 wk (6 hr/d, 5 d/wk). At the end of exposure, GPs were challenged with an OA aerosol (0.1% in NaCl) and pulmonary functions were measured. The day after, guinea pigs were anesthetized and several endpoints related to inflammatory and allergic responses were assessed in blood, whole-lung histology, and bronchoalveolar lavage (BAL). Exposure to the test substance did not lead to an allergic reaction after the challenge with OA on any of the parameters investigated. In the nasal cavities slight irritation (metaplasia/hyperplasia) of the respiratory epithelium was observed. Histological examination of the trachea and lungs showed a slight irritation of respiratory epithelium for nonsensitized GPs.";
 
-           Data = Remove_StopWord(Data);
+            Data = Remove_StopWord(Data);
             InputData[] datas = Tokenize(Data);
 
-            foreach(var data in datas)
+            foreach (var data in datas)
             {
                 var predictionC = C_predEngine.Predict(data);
                 var predictionG = G_predEngine.Predict(data);
 
-                Console.WriteLine($"단어 : {data.Name, -30} | 카테고리 : {predictionC.Category, -20} | 문법 : {predictionG.Grammar, -10}");
+                Console.WriteLine($"단어 : {data.Name,-30} | 카테고리 : {predictionC.Category,-20} | 문법 : {predictionG.Grammar,-10}");
             }
+        }
+
+        static void Test_Subject()
+        {
+            // 시드는 변경 가능
+            _mlContext = new MLContext(seed: 0);
+
+            Subject_ReadFile();
+
+            var subejct_pipeline = Subject_ProcessData();
+            var StrainingPipeline = SBuildAndTrainModel(_trainingDataView, subejct_pipeline);
+            S_trainedModel = StrainingPipeline.Fit(_trainingDataView);
+
+            S_predEngine = _mlContext.Model.CreatePredictionEngine<TextData, Prediction_Subejct>(S_trainedModel);
+
+            TextData td = new TextData
+            {
+                Text = "Acute Exposure/ The sensory irritating potential of a series of saturated and unsaturated aliphatic and cyclic aldehydes was investigated in B6C3F1 and Swiss Webster mice."
+            };
+
+            var result = S_predEngine.Predict(td);
+
+            Console.WriteLine( $"{result.Subject, -10}, {result.SubFeatures}");
         }
 
         /// <summary>
         /// 지정한 파일을 읽어오기
         /// </summary>
-        static void ReadFile()
+        static void Grammar_ReadFile()
         {
             if (!File.Exists(_trainDataPath)) throw new Exception("파일이 존재하지 않습니다..");
 
             try { _trainingDataView = _mlContext.Data.LoadFromTextFile<InputData>(_trainDataPath, hasHeader: true); }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
+
+        /// <summary>
+        /// 지정한 파일을 읽어오기
+        /// </summary>
+        static void Subject_ReadFile()
+        {
+            if (!File.Exists(_trainDataPath)) throw new Exception("파일이 존재하지 않습니다..");
+
+            try { _trainingDataView = _mlContext.Data.LoadFromTextFile<TextData>(_trainSubjectDataPath, hasHeader: true); }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
 
@@ -153,6 +196,30 @@ namespace Name_Entity_Recognition_Test_Program
                 Console.WriteLine(e.ToString());
                 return null;
             }
+        }
+
+        static IEstimator<ITransformer> Subject_ProcessData()
+        {
+            var subjectModel = _mlContext.Transforms.Conversion.MapValueToKey(inputColumnName: "Subject", outputColumnName: "Label")
+               .Append(_mlContext.Transforms.Text.FeaturizeText(inputColumnName: "Text", outputColumnName: "TextFeaturized"))
+               .Append(_mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "ValidFeaturized", inputColumnName: nameof(TextData.Valid)))
+               // Features 에 데이터를 연결
+               .Append(_mlContext.Transforms.Concatenate("Features","TextFeaturized", "ValidFeaturized"))
+               
+               // DataView 캐쉬
+               .AppendCacheCheckpoint(_mlContext);
+
+            return subjectModel;
+        }
+
+        static IEstimator<ITransformer> SBuildAndTrainModel(IDataView trainingDataView, IEstimator<ITransformer> pipeline)
+        {
+            var Pipeline = pipeline.Append(_mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy("Label", "Features"))
+            .Append(_mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+
+            var model = Pipeline.Fit(_trainingDataView);
+
+            return Pipeline;
         }
 
         /// <summary>

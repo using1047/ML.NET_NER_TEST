@@ -32,3 +32,4 @@ D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recog
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.pdb
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.genruntimeconfig.cache
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.tsv
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\TextData.tsv

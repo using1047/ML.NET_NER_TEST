@@ -193,8 +193,8 @@ Humans	Human	Nouns
 Consumer	Human	Noun
 Consumers	Human	Nouns
 Peoples	Human	Nouns
-Cleaner	Human	Noun
-Cleaners	Human	Nouns
+Cleaner	None	Noun
+Cleaners	None	Nouns
 Plastic	Matter	Noun
 Plastics	Matter	Nouns
 Clay	Matter	Noun
@@ -818,3 +818,7 @@ pKa	Unit	None
 Koc	Unit	None
 nm	Unit	None
 Hours	Date	Nouns
+Found	Active	Verb
+Volatilization	Environment	Noun
+Non-volatile	Environment	Noun
+mg/kg/day	Unit	None
