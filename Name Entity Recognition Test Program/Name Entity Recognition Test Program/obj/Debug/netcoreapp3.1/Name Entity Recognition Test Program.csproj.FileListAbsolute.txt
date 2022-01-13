@@ -23,7 +23,6 @@ D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recog
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libLdaNative.dylib
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\LdaNative.dll
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\LdaNative.dll
-D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.csprojAssemblyReference.cache
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.AssemblyInfoInputs.cache
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.AssemblyInfo.cs
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.csproj.CoreCompileInputs.cache
@@ -33,3 +32,5 @@ D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recog
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.genruntimeconfig.cache
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\InputData.tsv
 D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\bin\Debug\netcoreapp3.1\Data\TextData.tsv
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.csproj.AssemblyReference.cache
+D:\AI\NER\ML.NET_NER_TEST\Name Entity Recognition Test Program\Name Entity Recognition Test Program\obj\Debug\netcoreapp3.1\Name Entity Recognition Test Program.GeneratedMSBuildEditorConfig.editorconfig

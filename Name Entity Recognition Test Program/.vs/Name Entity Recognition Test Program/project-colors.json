@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2f06e5fd-1c48-4610-a6b4-57fadf880955": {
+      "ProjectGuid": "2f06e5fd-1c48-4610-a6b4-57fadf880955",
+      "DisplayName": "Name Entity Recognition Test Program",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
